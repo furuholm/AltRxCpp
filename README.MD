@@ -1,5 +1,9 @@
 Reactive Extensions is something I really want to have in my C++ toolbelt and fortunatley RxCpp exists. RxCpp has evolved greatly since the first version, but I still think there are some things that can be done in order to make the implementation simpler and cleaner. After studying the implementation of RxJava I decided to try to implement a subset of Reactive Extensions in C++ using RxJava as a guide. I have tried to stay as close to the RxJava implementation as possible while still trying to write idiomatic C++. The result is this prototype.
 
+Disclaimer
+==========
+Only a small subset of Reactive Extensions is implemented. It is not intended for use, only as a basis for discussion or further development.
+
 Micro benchmarks
 ================
 So far this prototype only implements two operators: range and map. I used these two to create a couple of (micro) benchmarks to compare the performance of this prototype to RxCpp. The benchmarks were built in release mode. The sourcecode for the benchmarks is listed below. The only difference between the source code used to test my prototype and RxCpp is that the invocation of range looks like this in my prototype: `range(1,1e6)` and like this in RxCpp: `rxcpp::sources::range<int>(1,1e6)`
